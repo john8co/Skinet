@@ -26,6 +26,8 @@ if (app.Environment.IsDevelopment())
 //app.UseHttpsRedirection(); //Cause des warnings dans l'app et n'est pas utile
 app.UseStaticFiles();
 
+app.UseCors("CorsPolicy");
+
 app.UseAuthorization();
 
 app.MapControllers();
