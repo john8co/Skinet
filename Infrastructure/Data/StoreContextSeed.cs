@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Core.Entities;
+using Core.Entities.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
@@ -29,6 +30,7 @@ namespace Infrastructure.Data
             AddRange<ProductBrand>(context.ProductBrands, "brands.json");
             AddRange<ProductType>(context.ProductTypes, "types.json");
             AddRange<Product>(context.Products, "products.json");
+            AddRange<DeliveryMethod>(context.DeliveryMethods, "delivery.json");
 
             if(context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
         }            
